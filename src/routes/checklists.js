@@ -13,7 +13,8 @@ router.get('/:id', ((req, res) => {
 }))
 
 router.post('/', ((req, res) => {
-    console.log('Rota Post');
+    let { name } = res.body;
+    console.log(name);
     res.status(201).send(req.body);
 }))
 
