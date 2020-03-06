@@ -18,6 +18,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(methodOverride('_method', {methods: ['POST', 'GET']}));
 app.use('/checklists', checkListRouter);
 app.use('/checklists', taskRouter.checklistDependent);
+app.use('/tasks', taskRouter.simple);
 
 app.use('/', rootRouter);
 app.use(express.static(path.join(__dirname, 'public')))
